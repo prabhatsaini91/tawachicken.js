@@ -6,7 +6,7 @@ class Sidenav extends Component {
         super();
         
         this.state = {
-            categories : []    
+            categories : ['abcd','efgh']    
         }
     }
 
@@ -14,11 +14,14 @@ class Sidenav extends Component {
         return (
             <div className="categories-sidenav">
                 <ul>
-                {this.state.categories.map(c => `<li>${c}</li>`)}
+                    {this.state.categories.map(c => <li>${c}</li>)}
                 </ul>
             </div>
         )
-    }   
+    }
 }
+
+const wrapper = document.getElementById("online-order-pos");
+wrapper ? ReactDOM.render(<Sidenav/>, wrapper) : false;
 
 export default Sidenav
